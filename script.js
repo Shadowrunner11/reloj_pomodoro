@@ -3,9 +3,11 @@ let tiempo = document.getElementById("timer");
 let empezarBtn = document.getElementById("empezar");
 let pararBtn = document.getElementById("parar");
 let veinticinco =1000*60*25;
+let circulo =document.getElementById("circle")
 let intervalo;
 
 const empezar = ()=>{
+    circulo.setAttribute("class", "circle");
     empezarBtn.setAttribute("disabled", "true");
     intervalo= setInterval(()=>{
         if (veinticinco<=0) veinticinco=1000*60*25;
@@ -17,11 +19,12 @@ const empezar = ()=>{
         let segundosf =(segundos>=10)? segundos:`0${segundos}`;
         tiempo.textContent = `${minutosf}:${segundosf}`;
     }, 1000);
-    document.getElementsByClassName("reloj")[1].id = "cronom"
+    
     function parar (){
         clearInterval(intervalo)
         alert("Ya causa ya deja de estudiar");
-        document.getElementsByClassName("reloj")[1].id = "null"
+        document.title = "Hora de descansar";
+        
     }
     setTimeout(parar, veinticinco);  
 }
@@ -34,7 +37,9 @@ const reiniciar = ()=>{
     parar(); 
     veinticinco=1000*60*25; 
     tiempo.textContent="25:00";
-    document.getElementsByClassName("reloj")[1].id = "null"
+    circulo.setAttribute("class", "")
+    document.title = "Hora de descansar";
+    
 }
 
 

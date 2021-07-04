@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomato timer</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <h1>Reloj pomodoro</h1>
-    <div id="reloj__container" class = "reloj"><div id="null" class="reloj"></div></div>
+    <section>
+    <div id="circle-container">
+        <svg height="200" width="200">
+        <circle id="circle" class="" cx="100" cy="100" r="95"  stroke-width="10" fill-opacity="0" />
+    </svg>
+    </div>
     <p id="timer">25:00</p>
+    </section>
+    <section>
     <button id="empezar" onclick="empezar()">Empezar</button>
-    <button onclick="parar()">Pausa</button>
+    <!--<button onclick="parar()">Pausa</button>-->
     <button onclick="reiniciar()">Reinciar</button>
+    </section>
 
 
 

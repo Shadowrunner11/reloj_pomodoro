@@ -4,46 +4,74 @@
     --
 }*/
 
-body{text-align: center;background-color: rgba(23,23, 23, 0.3);}
+body{
+    text-align: center;
+    background-color: rgb(25,25, 25); 
+    color: cyan; 
+    text-shadow: 2px 2px 10px darkorchid;}
 
 
 h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 60px;
 }
-
-.reloj{
+section{position: relative;padding-top: 3%;}
+#circle-container{
     position: relative;
-    background: rgb(151, 151, 187);
+    width: 200px;
+    height: 200px;
+    border: solid 1px;
+    border-color: aqua;
     margin: auto;
-    width: 150px;
-    height: 150px;
-}
-
-#cronom{
-    position:absolute;
-    bottom: 0;
-    background: rgb(16, 107, 192);
-    animation-name: radio;
-    animation-duration: 1500s;
+    border-radius: 100%;
     
 }
-@keyframes radio{
-   0%{
-    height: 1%;
-   } 
-   
-   100%{
-    height: 100%;
-   }
-
+#circle{
+    stroke: darkorchid;
+}
+#circle-container::after{
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    border-radius: 50%;
+    content: "";
+    border: solid 1px;
+    border-color: aqua;
+    width: 180px;
+    height: 180px;
+}
+.circle{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: radio 150s ease-out backwards;
 }
 
-p{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 50px;
+@keyframes radio{
+   
+    to {
+        stroke-dashoffset: 0;
+      }
+}
+
+p{  
+    font-family: 'Orbitron', Tahoma, Geneva, Verdana, sans-serif;
+    
+    position: absolute;
+    bottom: 10%;
+    left: 46%;
+    font-size: 43px;
 }
 
 button{
+    font-family: 'Orbitron', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 50px;
+    color: darkorchid;
+    background-color: transparent;
+    border-radius: 10%;
+    margin: 10px;
+}
+
+button:hover{
+    box-shadow: 3px 3px 3px cyan;
+    color: darkcyan;
 }
